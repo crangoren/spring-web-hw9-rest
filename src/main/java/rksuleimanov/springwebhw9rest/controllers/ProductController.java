@@ -1,5 +1,7 @@
 package rksuleimanov.springwebhw9rest.controllers;
 
+import jdk.jfr.Category;
+import org.aspectj.lang.annotation.RequiredTypes;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import rksuleimanov.springwebhw9rest.dto.ProductDto;
@@ -7,6 +9,7 @@ import rksuleimanov.springwebhw9rest.entities.Product;
 import rksuleimanov.springwebhw9rest.services.ProductService;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 @RestController
@@ -38,15 +41,19 @@ public class ProductController {
         return productService.findById(id);
     }
 
-//    @PutMapping("/{id}")
-//    public void changePrice(@RequestParam Long productId, @RequestParam Integer delta){
-//        productService.changePrice(productId, delta);
-//    }
+    @PutMapping("/{id}")
+    public void changePrice(@RequestParam Long productId, @RequestParam Integer delta){
+        productService.changePrice(productId, delta);
+    }
 
 
     @PostMapping
-    public void addNewProduct(@RequestBody Product product){
+    public ProductDto addNewProduct(@RequestBody ProductDto productDto){
+        Product product = new Product();
+        product.setPrice(productDto.getPrice());
+        product.setTitle(productDto.getTitle());
         productService.addNewProduct(product);
+        return new ProductDto(product);
     }
 
     @DeleteMapping("/{id}")

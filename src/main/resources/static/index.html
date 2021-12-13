@@ -15,22 +15,22 @@
 <body>
 
     <div class="container" ng-controller="indexController">
-        <h5 align="right">Отфильтровать по стоимости</h5>
-        <div align="right">
-            <form novalidate ng-submit="filterByPriceBetween()">
-                <div class="form" >
-                    <label for="minPrice">Минимальная цена</label><br>
-                    <input type="number" class="form" id="minPrice" placeholder="min" ng-model="filter.min">
-                </div>
-                <br>
-                <div class="form">
-                    <label for="maxPrice">Максимальная цена</label><br>
-                    <input type="number" class="form" id="maxPrice" placeholder="max" ng-model="filter.max">
-                </div>
-                <br>
-                <button type="submit" class="btn btn-info">Показать</button>
-            </form>
-        </div>
+<!--        <h5 align="right">Отфильтровать по стоимости</h5>-->
+<!--        <div align="right">-->
+<!--            <form novalidate ng-submit="filterByPriceBetween()">-->
+<!--                <div class="form" >-->
+<!--                    <label for="minPrice">Минимальная цена</label><br>-->
+<!--                    <input type="number" class="form" id="minPrice" placeholder="min" ng-model="filter.min">-->
+<!--                </div>-->
+<!--                <br>-->
+<!--                <div class="form">-->
+<!--                    <label for="maxPrice">Максимальная цена</label><br>-->
+<!--                    <input type="number" class="form" id="maxPrice" placeholder="max" ng-model="filter.max">-->
+<!--                </div>-->
+<!--                <br>-->
+<!--                <button type="submit" class="btn btn-info">Показать</button>-->
+<!--            </form>-->
+<!--        </div>-->
 
         <h3>Список продуктов</h3>
 
@@ -44,23 +44,24 @@
             <tr ng-repeat="p in ProductList">
                 <td>{{p.id}}</td>
                 <td>{{p.title}}</td>
-                <td>
-                    <button class="btn btn-primary" ng-click="changePrice(p.id, -1)">-</button>
-                    {{p.price}}
-                    <button class="btn btn-primary" ng-click="changePrice(p.id, 1)">+</button>
-                </td>
-                <td>
-                    <button class="btn btn-danger" ng-click="deleteProduct(p.id)">Удалить</button>
-                </td>
+                <td>{{p.price}}</td>
+<!--                <td>-->
+<!--                    <button class="btn btn-primary" ng-click="changePrice(p.id, -1)">-</button>-->
+<!--                    {{p.price}}-->
+<!--                    <button class="btn btn-primary" ng-click="changePrice(p.id, 1)">+</button>-->
+<!--                </td>-->
+<!--                <td>-->
+<!--                    <button class="btn btn-danger" ng-click="deleteProduct(p.id)">Удалить</button>-->
+<!--                </td>-->
             </tr>
 
 
             </tbody>
         </table>
-        <div align="center">
-            <button class="btn btn-secondary" ng-click="pagePrevious"><-</button>
-            <button class="btn btn-secondary" ng-click="pageNext">-></button>
-        </div>
+<!--        <div align="center">-->
+<!--            <button class="btn btn-secondary" ng-click="pagePrevious"><-</button>-->
+<!--            <button class="btn btn-secondary" ng-click="pageNext">-></button>-->
+<!--        </div>-->
     </div>
 </body>
 </html>
