@@ -1,11 +1,14 @@
 package rksuleimanov.springwebhw9rest.entities;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ValueGenerationType;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "products")
+
 public class Product {
 
     @Id
@@ -23,9 +26,6 @@ public class Product {
         this.id = id;
         this.title = title;
         this.price = price;
-    }
-
-    public Product() {
     }
 
     public Long getId() {
@@ -52,6 +52,8 @@ public class Product {
         this.price = price;
     }
 
+    public Product() {
 
+    }
 }
 
