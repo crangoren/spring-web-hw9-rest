@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+
+    <div class="container" ng-controller="indexController">
+<!--        <h5 align="right">Отфильтровать по стоимости</h5>-->
+<!--        <div align="right">-->
+<!--            <form novalidate ng-submit="filterByPriceBetween()">-->
+<!--                <div class="form" >-->
+<!--                    <label for="minPrice">Минимальная цена</label><br>-->
+<!--                    <input type="number" class="form" id="minPrice" placeholder="min" ng-model="filter.min">-->
+<!--                </div>-->
+<!--                <br>-->
+<!--                <div class="form">-->
+<!--                    <label for="maxPrice">Максимальная цена</label><br>-->
+<!--                    <input type="number" class="form" id="maxPrice" placeholder="max" ng-model="filter.max">-->
+<!--                </div>-->
+<!--                <br>-->
+<!--                <button type="submit" class="btn btn-info">Показать</button>-->
+<!--            </form>-->
+<!--        </div>-->
+
+        <h3>Список продуктов</h3>
+
+        <table class="table table-hover" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>ID</td>
+                <td>Название продукта</td>
+                <td>Цена</td>
+            </tr>
+            <tbody>
+            <tr ng-repeat="p in ProductList">
+                <td>{{p.id}}</td>
+                <td>{{p.title}}</td>
+                <td>{{p.price}}</td>
+<!--                <td>-->
+<!--                    <button class="btn btn-primary" ng-click="changePrice(p.id, -1)">-</button>-->
+<!--                    {{p.price}}-->
+<!--                    <button class="btn btn-primary" ng-click="changePrice(p.id, 1)">+</button>-->
+<!--                </td>-->
+<!--                <td>-->
+<!--                    <button class="btn btn-danger" ng-click="deleteProduct(p.id)">Удалить</button>-->
+<!--                </td>-->
+            </tr>
+
+
+            </tbody>
+        </table>
+<!--        <div align="center">-->
+<!--            <button class="btn btn-secondary" ng-click="pagePrevious"><-</button>-->
+<!--            <button class="btn btn-secondary" ng-click="pageNext">-></button>-->
+<!--        </div>-->
+    </div>
+</body>
+</html>
